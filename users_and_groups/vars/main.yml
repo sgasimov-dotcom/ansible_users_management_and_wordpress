@@ -1,2 +1,11 @@
 ---
 # vars file for users_and_wordpress
+dev_groups:
+  - devops
+  - admin
+dev_users:
+  - angela
+  - david
+  - sam
+  - kevin
+  - kumar

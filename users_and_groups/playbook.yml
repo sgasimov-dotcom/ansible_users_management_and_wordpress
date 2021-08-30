@@ -1,0 +1,4 @@
+- hosts: all
+  become: true
+  roles:
+    - users_and_groups

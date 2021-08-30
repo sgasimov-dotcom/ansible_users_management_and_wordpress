@@ -1,2 +1,27 @@
 ---
 # tasks file for users_and_wordpress
+  #Creates group DevOps
+- name: Create DevOps group
+  when: ansible_facts['distribution'] == "Ubuntu"
+  group:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ dev_groups }}"
+  # Create 5 users, add to DevOps group and ssh keys
+- name: Create 5 users - add to Developers group - generate ssh keys
+  when: ansible_facts['distribution'] == "Ubuntu"    
+  user:
+    name: "{{ item }}"
+    groups: "{{ dev_groups }}"
+    generate_ssh_key: yes
+    append: yes
+    state: present
+  loop: "{{ dev_users }}"
+  # Allow admin group users to have sudo priviledge
+- name: "Allow admin users to sudo without a password"
+  when: ansible_facts['distribution'] == "Ubuntu"    
+  lineinfile:
+    dest: "/etc/sudoers" # path: in version 2.3
+    state: "present"
+    regexp: "^%admin"
+    line: "%admin ALL=(ALL) NOPASSWD: ALL"
