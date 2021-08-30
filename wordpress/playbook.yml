@@ -1,0 +1,10 @@
+#########################################################
+#  Wordpress on Ubuntu 20.04 LAMP
+#########################################################
+---
+- name: All configs 
+  hosts: all
+  become: true
+  roles:
+    - wordpress
+

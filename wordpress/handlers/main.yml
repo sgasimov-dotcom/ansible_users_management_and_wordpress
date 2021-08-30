@@ -1,0 +1,10 @@
+---
+# handlers file for wordpress
+- name: Reload Apache
+  service:
+    name: apache2
+    state: reloade
+- name: Restart Apache
+  service:
+    name: apache2
+    state: restarted
