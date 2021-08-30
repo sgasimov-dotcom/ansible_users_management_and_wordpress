@@ -1,38 +1,36 @@
-Role Name
+Role Description
 =========
 
-A brief description of the role goes here.
 
-Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+This Role was created for my class Project. Taks requirements were the following:
 
-Role Variables
+
+- Please create an ansible role that installs WordPress on Operating systems. 
+
+- The same role should add 5 users with ssh keys generated on ubuntu machines, and add those users to a devops group.
+
+- Those users should have root privileges.
+
+- For testing purposes this role should install telnet for future use. 
+- Once the role is created, please publish on galaxy.ansible.com by utilizing the following documentation
+
+- https://opcitotechnologies.medium.com/how-to-write-ansible-roles-and-publish-them-on-ansible-galaxy-e750cd457619#:~:text=Ansible%20Galaxy%20is%20Ansible's%20official,known%20to%20Ansible%20as%20Roles.
+
+- https://galaxy.ansible.com/docs/contributing/index.html
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-Dependencies
+ Users and Groups Management
+------------------
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+This role  will create users and groups.
 
-Example Playbook
-----------------
+Run playbook: ansible-playbook playbooktask2.yaml 
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Variables are located in: users_groups/vars.yml variable file.
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
 
-License
+
 -------
-
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).

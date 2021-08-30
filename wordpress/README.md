@@ -1,38 +1,15 @@
-Role Name
-=========
+# Wordpress on Ubuntu 20.04 LAMP
 
-A brief description of the role goes here.
+This playbook will install a WordPress website on top of a LAMP environment (**L**inux, **A**pache, **M**ySQL and **P**HP) on an Ubuntu 20.04 machine
 
-Requirements
-------------
+## Settings
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+- `php_modules`:  An array containing PHP extensions that should be installed to support your WordPress setup. You don't need to change this variable, but you might want to include new extensions to the list if your specific setup requires it.
+- `mysql_root_password`: The desired password for the **root** MySQL account.
+- `mysql_db`: The name of the MySQL database that should be created for WordPress.
+- `mysql_user`: The name of the MySQL user that should be created for WordPress.
+- `mysql_password`: The password for the new MySQL user.
+- `http_host`: Your domain name.
+- `http_conf`: The name of the configuration file that will be created within Apache.
+- `http_port`: HTTP port for this virtual host, where `80` is the default. 
 
-Role Variables
---------------
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
-
-Example Playbook
-----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
-
-License
--------
-
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
